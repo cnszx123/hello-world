@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+ 
+char* mystrcpy(char* dest, const char* sourse) {
+	assert(dest != NULL);
+	assert(sourse != NULL);
+	int i = 0;
+	while (sourse[i] != '\0') {
+		dest[i] = sourse[i];
+		i++;
+	}
+	return dest;
+}
+ 
+int main() {
+	char dest[1024] = { 0 };
+	char sourse[] = "hello!";
+	mystrcpy(dest, sourse);
+	printf("%s\n", dest);
+	return 0;
+}
